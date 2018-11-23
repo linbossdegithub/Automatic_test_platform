@@ -1,0 +1,34 @@
+{#login/templates/login/login.html#}
+{% extends 'login/base.html' %}
+{% block title %}主页{% endblock %}
+
+{% block script %}
+
+<script type="text/javascript" src="/static/tiny_mce/tiny_mce.js"></script>
+<script type="text/javascript">
+    tinyMCE.init({
+        'mode':'textareas',
+        'theme':'advanced',
+        'width':400,
+        'height':100
+        });
+</script>
+
+{% endblock %}
+
+{% block content %}
+
+    {% if request.session.is_login %}
+    
+    <form method="post" action="/do_add/">
+        {% csrf_token %}
+        <textarea name="hcontent">请填入内容</textarea>
+	<input type="submit" value="提交" />
+    </form>
+
+    {% else %}
+    <h1>你尚未登录，只能访问公开内容！</h1>
+    {% endif %}
+{% endblock %}
+
+

@@ -1,0 +1,36 @@
+GET http://wechat.novaicare.com/wx/backend/wechat/clickLogin HTTP/1.1
+Host: wechat.novaicare.com
+Connection: keep-alive
+User-Agent: Mozilla/5.0 (Linux; Android 8.0; HWI-AL00 Build/HUAWEIHWI-AL00; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/57.0.2987.132 MQQBrowser/6.2 TBS/044113 Mobile Safari/537.36 MicroMessenger/6.6.7.1321(0x26060739) NetType/WIFI Language/zh_CN
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,image/wxpic,image/sharpp,image/apng,*/*;q=0.8
+Accept-Encoding: gzip, deflate
+Accept-Language: zh-CN,zh-CN;q=0.8,en-US;q=0.6
+Cookie: XSRF-TOKEN=eyJpdiI6InNNZDE2Ymp5enJ3TzZySXpNazdBaVE9PSIsInZhbHVlIjoickFld1dhT2RxNGU5TlwvazZTOWVtM01iTzNNZ3p2VUVvM0tSU1hZekRIOWNnXC9VbHNHWWpiK01SeWFJQXM2SjR4cWluZmJ5MDgxWWRYT0FcL3BaNlBjblE9PSIsIm1hYyI6Ijk3NDVlNDQ1ODMxODFmYmZkMThhOGI5MmFiZWU0ZDcyYzYxNzhlMmQ1NzNmYTE5ZDNmMmE3YWYyMDVlMjEwNTYifQ%3D%3D; laravel_session=eyJpdiI6IlpIQzkxUFZ4aUtMUkI3dHdvSEQyQmc9PSIsInZhbHVlIjoiWXNGbndJVTFHXC9kZXRUeUtWOFVIcmFWR2NDd0hnNlp5cFZwNFdEYWpDSmRPOHlxTkErZ0Q5MFwvdWJ6WWhvQTQ2bDhnSUIraDJEMEE0VDEreFowZFpsQT09IiwibWFjIjoiMGJhM2U4YTI3YWM2NzRmNGFjYjNiZWNkMTY4MDlhMmMwZWQyZGNiODk4ZDhjNzQ4NDdmMWFhMTc5NDI1MTkwYiJ9
+
+
+
+
+
+
+
+
+
+
+
+
+POST http://wechat.novaicare.com/wx/backend/api/wechat/loginCheck HTTP/1.1
+Host: wechat.novaicare.com
+Connection: keep-alive
+Content-Length: 97
+Accept: application/json, text/plain, */*
+Origin: http://wechat.novaicare.com
+X-XSRF-TOKEN: eyJpdiI6Iis2NjBvZzdrUFp6ZTF6TTltZXFCM3c9PSIsInZhbHVlIjoiR0RlSVVYSW9pTkNYQVVtd1NQU0hna0FFUVZwTzJWWE9uVTBaWlVnd0RDOHdVTUhkektuNVU4MHdNTHpTXC80VkpEUzJTdnBhdE9KelIrN1cyZU5oUW53PT0iLCJtYWMiOiI5Njc2NDE0OWY3MGYxMjE2YmE1YzcwYWUxYjc0MWMzMjQ2ZjFkMDY1M2U0MzExY2FlZTExZTg2NDFlYjg1ZjRhIn0=
+User-Agent: Mozilla/5.0 (Linux; Android 8.0; HWI-AL00 Build/HUAWEIHWI-AL00; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/57.0.2987.132 MQQBrowser/6.2 TBS/044113 Mobile Safari/537.36 MicroMessenger/6.6.7.1321(0x26060739) NetType/WIFI Language/zh_CN
+Content-Type: application/json;charset=UTF-8
+Referer: http://wechat.novaicare.com/wx/
+Accept-Encoding: gzip, deflate
+Accept-Language: zh-CN,zh-CN;q=0.8,en-US;q=0.6
+Cookie: XSRF-TOKEN=eyJpdiI6Iis2NjBvZzdrUFp6ZTF6TTltZXFCM3c9PSIsInZhbHVlIjoiR0RlSVVYSW9pTkNYQVVtd1NQU0hna0FFUVZwTzJWWE9uVTBaWlVnd0RDOHdVTUhkektuNVU4MHdNTHpTXC80VkpEUzJTdnBhdE9KelIrN1cyZU5oUW53PT0iLCJtYWMiOiI5Njc2NDE0OWY3MGYxMjE2YmE1YzcwYWUxYjc0MWMzMjQ2ZjFkMDY1M2U0MzExY2FlZTExZTg2NDFlYjg1ZjRhIn0%3D; laravel_session=eyJpdiI6InVHS1wvdFVUa2ZBRVRqNTc1aVJlVjRRPT0iLCJ2YWx1ZSI6IkxMXC9uVURBK1c4aVppRjhIVHFVcUZRcUVmT3daUExETlFvRFFLZVczU2pRUFJjdmhidURnc3lnMWZXUDNhRnJHV2F1OEtiUnRJek56bDk4em1nZjVzUT09IiwibWFjIjoiYjViOWQ2OThkM2E4YWE3ZGUyODAwM2U3MmYzYWZmZWEwNzgxNzQyM2Y1MzZhYjIyNjBjMmJlOGRlMTg2NzIzZSJ9
+X-Requested-With: com.tencent.mm
+
+{"node":"us","username":"linhuajian","password":"123456","openid":"olKdEwH__QGy8I_i1Yoh8347pqfA"}

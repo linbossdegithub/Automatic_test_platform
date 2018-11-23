@@ -1,0 +1,104 @@
+{#login/templates/login/login.html#}
+{% extends 'login/base.html' %}
+{% block title %}文件下载{% endblock %}
+
+{% block script %}
+{% endblock %}
+
+{% block content %}
+{% if request.session.is_login %}
+
+   <form action="/upload/" method="post" enctype="multipart/form-data">
+         {% csrf_token %}
+	<input type="file" name="snapData">
+	<br/>
+        <input type="submit">
+   </form> 
+   <a href="/download_file/">
+      <button class="btn bg-danger">下载</button>
+   </a>
+
+
+    <video width="200" height="150"></video>
+    <canvas width="200" height="150"></canvas>
+
+    <p>
+        <button id="snap">截取图像</button>
+        <button id="close">关闭摄像头</button>
+        <button id="upload">上传图像</button>
+    </p>
+
+    <img id="uploaded" width="200" height="150" />
+
+{% else %}
+  <h1>你尚未登录，只能访问公开内容！</h1>
+{% endif %}
+{% endblock %}
+{%block js %}
+ {% csrf_token %}
+
+<script type="text/javascript" src="https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js"></script>
+    <script type="text/javascript">
+    function $(elem) {
+        return document.querySelector(elem);
+    }
+
+    // 获取媒体方法（旧方法）
+    navigator.getMedia = navigator.getUserMedia || navigator.webkitGetUserMedia || navigator.mozGetUserMeddia || navigator.msGetUserMedia;
+   
+    var canvas = $('canvas'),
+        context = canvas.getContext('2d'),
+        video = $('video'),
+        snap = $('#snap'),
+        close = $('#close'),
+        upload = $('#upload'),
+        uploaded = $('#uploaded'),
+        mediaStreamTrack;
+    // 获取媒体方法（新方法）
+    // 使用新方法打开摄像头
+    if (navigator.mediaDevices && navigator.mediaDevices.getUserMedia) {
+        navigator.mediaDevices.getUserMedia({
+            video: true,
+            audio: true
+        }).then(function(stream) {
+            console.log(stream);
+
+            mediaStreamTrack = typeof stream.stop === 'function' ? stream : stream.getTracks()[1];
+
+            video.src = (window.URL || window.webkitURL).createObjectURL(stream);
+            video.play();
+        }).catch(function(err) {
+            console.log(err);
+        })
+    }
+    // 使用旧方法打开摄像头
+    else if (navigator.getMedia) {
+        navigator.getMedia({
+            video: true
+        }, function(stream) {
+            mediaStreamTrack = stream.getTracks()[0];
+
+            video.src = (window.URL || window.webkitURL).createObjectURL(stream);
+            video.play();
+        }, function(err) {
+            console.log(err);
+        });
+    }
+
+    // 截取图像
+    snap.addEventListener('click', function() {
+        context.drawImage(video, 0, 0, 200, 150);
+    }, false);
+
+    // 关闭摄像头
+    close.addEventListener('click', function() {
+        mediaStreamTrack && mediaStreamTrack.stop();
+    }, false);
+// 上传截取的图像
+    upload.addEventListener('click', function() {
+        jQuery.post('/jietu/', {
+	snapData: canvas.toDataURL('image/png')
+	})});
+
+    </script>
+{%endblock%}
