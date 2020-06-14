@@ -1,2 +1,30 @@
-# 
-è‡ªåŠ¨åŒ–æµ‹è¯•å¹³å°
+¼ò½é: ÓÃdjango´î½¨ÁËÒ»¸ö¼òÒ×µÄwebÆ½Ì¨£¬À´¼¯³É×Ô¶¯»¯²âÊÔ£¬ÊÊºÏ³õÑ§ÕßÊ¹ÓÃ
+
+ÔËĞĞ»·¾³ linux python2.7 
+1¡¢ĞŞ¸ÄÊı¾İ¿âÅäÖÃ vim mysite_login/settings.py
+
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'mysite_login',        
+        'USER': 'root',          
+        'PASSWORD': 'youpasswd',      #you mysql passwd
+        'HOST': 'xxx',    #you mysql server ip
+        'PORT': '3306',                   #
+        }
+2¡¢pip install django 
+3¡¢pip install django-simple-captcha
+4¡¢pip install django-tinymce==2.4.0
+5¡¢pip install django-pure-pagination
+6¡¢pip install django-contrib-comments
+7¡¢pip install fields
+8¡¢Django 1.11¼æÈİĞÔÎÊÌâ-ÎŞ·¨µ¼ÈëÃû³ÆFlatatt  ½â¾ö£ºĞŞ¸ÄÔ´Âë  ±¨´íµÄÄÇÒ»ĞĞµ¼Èë¸ÄÎª:from django.forms.utils import flatatt 
+9¡¢Êı¾İ¿â mysite_login ĞèÒªÎªutf-8 
+ »òÕß£ºalter database mysite_login character set utf8;
+10¡¢pip install pymysql
+11¡¢python manage.py makemigrations     
+12¡¢python manage.py migrate
+13¡¢ÔËĞĞ
+ python mange.py runserver 0.0.0.0:8000  
+14¡¢·ÃÎÊ
+ http://ip:8000/index/

@@ -1,6 +1,6 @@
 {#login/templates/login/login.html#}
 {% extends 'login/base.html' %}
-{% block title %}自动化测试用例{% endblock %}
+{% block title %}执行服务器python脚本{% endblock %}
 
 {% block script %}
 
@@ -20,7 +20,7 @@
 {% if request.session.is_login %}
   <form action="/auto_test/" method="post">
       {% csrf_token %}
-      <h1>care的自动化测试用例</h1>
+      <h1>执行服务器python脚本</h1>
       <button type="submit" class="btn btn-primary pull-default">执行</button>
   </form>
 {% else %}
