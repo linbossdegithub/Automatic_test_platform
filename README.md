@@ -1,4 +1,6 @@
 简介: 用django搭建了一个简易的web平台，来集成自动化测试，适合初学者使用
+效果如下：
+http://linhuajian.icu:8000/login/
 
 运行环境 linux python2.7 
 1、修改数据库配置 vim mysite_login/settings.py
